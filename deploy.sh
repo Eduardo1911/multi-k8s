@@ -12,7 +12,7 @@ docker push eduarcos/multi-server:$SHA
 docker push eduarcos/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=eduarcos/multiserver:$SHA
-kubectl set image deployments/client-deployment client=eduarcos/multiclient:$SHA
-kubectl set image deployments/worker-deployment worker=eduarcos/multiworker:$SHA
+kubectl set image deployments/server-deployment server=eduarcos/multi-server:$SHA
+kubectl set image deployments/client-deployment client=eduarcos/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=eduarcos/multi-worker:$SHA
 
