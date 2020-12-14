@@ -19,7 +19,6 @@ before_install:
 
 script:
   - docker run -e CI=true eduarcos/react-test npm test
-# git token 3421bc12ac71d84e5f27ef4cc7707af132860252
 
 deploy:
   provider: script
