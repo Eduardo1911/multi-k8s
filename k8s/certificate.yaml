@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: cool-app-eu-tls
+spec:
+  secretName: cool-app-eu
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: cool-app.eu
+  dnsNames:
+    - cool-app.eu
+    - www.cool-app.eu
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - cool-app.com
+          - www.cool-app.com
